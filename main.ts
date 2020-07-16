@@ -1,10 +1,8 @@
 // -*- mode: javascript -*-
 
-function add(a: number, b: number){
-  console.log(a + b);
-}
-
 // console.log("hello!");
+
+import * as model from "./model.ts";
 
 const { args } = Deno;
 // console.log(args);
@@ -17,7 +15,7 @@ switch (subcmd) {
 case "add":
   const a = parseInt(subcmdArgs[0]);
   const b = parseInt(subcmdArgs[1]);
-  add(a, b);
+  console.log(model.add(a, b));
   break;
   
 default:
