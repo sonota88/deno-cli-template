@@ -18,6 +18,10 @@ case "add":
   console.log(model.add(a, b));
   break;
   
+case "cat":
+  model.cat();
+  break;
+  
 default:
   console.log(args);
   break;
