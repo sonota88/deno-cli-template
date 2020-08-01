@@ -22,6 +22,10 @@ case "cat":
   model.cat();
   break;
   
+case "cat_file":
+  model.catFile(subcmdArgs[0]);
+  break;
+  
 default:
   console.log(args);
   break;
