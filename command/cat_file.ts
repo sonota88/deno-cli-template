@@ -85,10 +85,10 @@ const print = (str: string) => {
   );
 };
 
-const main = (path: string) => {
+async function main(path: string) {
   const fr = new FileReader(path);
 
-  fr.eachLine((line) => {
+  await fr.eachLine((line) => {
     print(
       line
         .replace("\r", "<CR>")
@@ -97,7 +97,7 @@ const main = (path: string) => {
   });
 
   fr.close();
-};
+}
 
 export {
   main,

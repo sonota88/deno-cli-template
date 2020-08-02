@@ -11,8 +11,8 @@ const cat = ()=>{
   cmd_cat.main();
 }
 
-const catFile = (path: string)=>{
-  cmd_cat_file.main(path);
+const catFile = async (path: string)=>{
+  await cmd_cat_file.main(path);
 }
 
 export {
