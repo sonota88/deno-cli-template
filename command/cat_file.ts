@@ -88,15 +88,17 @@ const print = (str: string) => {
 async function main(path: string) {
   const fr = new FileReader(path);
 
-  await fr.eachLine((line) => {
-    print(
-      line
-        .replace("\r", "<CR>")
-        .replace("\n", "<LF>\n"),
-    );
-  });
-
-  fr.close();
+  try {
+    await fr.eachLine((line) => {
+      print(
+        line
+          .replace("\r", "<CR>")
+          .replace("\n", "<LF>\n"),
+      );
+    });
+  } finally {
+    fr.close();
+  }
 }
 
 export {
